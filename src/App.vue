@@ -3,15 +3,21 @@
     <Header />
     <main>
       <Content />
-      <Shop />
     </main>
+    <footer>
+      <div>
+        <Shop />
+        <FooterLinks />
+      </div>
+    </footer>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
 import Content from "./components/Content.vue";
-import Shop from "./components/Dc-shop.vue" ;
+import Shop from "./components/Dc-shop.vue";
+import FooterLinks from "./components/Links-list.vue";
 
 export default {
   name: "App",
@@ -19,6 +25,7 @@ export default {
     Header,
     Content,
     Shop,
+    FooterLinks,
   },
 };
 </script>
