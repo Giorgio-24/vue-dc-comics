@@ -1,7 +1,7 @@
 @mixin center($type : 'both'){
 display: flex;
 @if $type == 'y' {
-    align-self: center;
+    align-items: center;
 } @else if $type == 'x' {
     justify-content: center;
 } @else {
