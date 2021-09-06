@@ -1,11 +1,11 @@
 <template>
-  <header class="container">
+  <header class="container h-120">
     <div class="row">
       <figure>
         <img src="@/assets/img/dc-logo.png" alt="dc-logo" class="img-fluid" />
       </figure>
       <ul>
-        <li class="d-inline-block" v-for="(link, index) in links" :key="index">
+        <li class="" v-for="(link, index) in links" :key="index">
           <a class="uppercase" :href="link.url">{{ link.text }}</a>
         </li>
       </ul>
@@ -78,12 +78,19 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/_mixins.scss";
 @import "@/assets/scss/_vars.scss";
-div .row {
+
+header {
+  @include center("y");
+}
+
+div.row {
+  width: 100%;
   @include justify("between");
 }
 
 figure {
-  width: 90px;
+  height: 90px;
+  @include center("y");
 }
 
 ul {

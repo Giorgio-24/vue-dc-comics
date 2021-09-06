@@ -14,7 +14,7 @@ display: flex;
 @mixin justify($type : 'center'){
     display: flex;
     @if $type == 'between' {
-        justify-content: space-between
+        justify-content: space-between;
     } @else if $type == 'around' {
         justify-content: space-around;
     } @else if $type == 'end' {
