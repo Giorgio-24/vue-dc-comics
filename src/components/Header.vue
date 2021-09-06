@@ -5,7 +5,7 @@
         <img src="@/assets/img/dc-logo.png" alt="dc-logo" class="img-fluid" />
       </figure>
       <ul>
-        <li class="" v-for="(link, index) in links" :key="index">
+        <li v-for="(link, index) in links" :key="index">
           <a class="uppercase" :href="link.url">{{ link.text }}</a>
         </li>
       </ul>
