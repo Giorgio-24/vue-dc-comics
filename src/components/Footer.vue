@@ -72,10 +72,10 @@ section {
     a {
       padding: 0 10px;
       height: 100%;
-    }
-    a.uppercase {
-      color: $blue;
-      font-weight: bold;
+      &.uppercase {
+        color: $blue;
+        font-weight: bold;
+      }
     }
   }
 }

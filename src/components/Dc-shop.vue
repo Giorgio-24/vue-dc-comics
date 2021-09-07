@@ -3,11 +3,10 @@
     <div class="container h-100">
       <ul class="h-100">
         <li v-for="(link, index) in links" :key="index">
-          <a :href="link.href"
-            ><img :src="link.icon" :alt="`buy-${link.text}`" /><span>{{
-              link.text
-            }}</span></a
-          >
+          <a :href="link.href">
+            <img class="icon" :src="link.icon" :alt="`buy-${link.text}`" />
+            <span>{{ link.text }}</span>
+          </a>
         </li>
 
         <!--         <li><a href="#">DC merchandise</a></li>
@@ -27,27 +26,27 @@ export default {
       links: [
         {
           text: "digital comics",
-          icon: "../src/assets/img/buy-comics-digital-comics.png",
+          icon: require("@/assets/img/buy-comics-digital-comics.png"),
           href: "#",
         },
         {
           text: "dc merchandise",
-          icon: "../src/assets/img/buy-comics-merchandise.png",
+          icon: require("@/assets/img/buy-comics-merchandise.png"),
           href: "#",
         },
         {
           text: "subscription",
-          icon: "../src/assets/img/buy-comics-subscriptions.png",
+          icon: require("@/assets/img/buy-comics-subscriptions.png"),
           href: "#",
         },
         {
           text: "comic shop locator",
-          icon: "../src/assets/img/buy-comics-shop-locator.png",
+          icon: require("@/assets/img/buy-comics-shop-locator.png"),
           href: "#",
         },
         {
           text: "dc power visa",
-          icon: "../src/assets/img/buy-dc-power-visa.svg",
+          icon: require("@/assets/img/buy-dc-power-visa.svg"),
           href: "#",
         },
       ],
@@ -65,17 +64,26 @@ section {
   background-color: $blue;
 
   ul {
+    margin-left: 40px;
     @include center("y");
     @include justify("around");
     li {
-      @include center("y");
+      &:nth-of-type(4) img.icon,
+      &:nth-of-type(5) img.icon {
+        width: 20%;
+      }
 
       a {
         color: #fff;
         text-transform: uppercase;
-        padding: 25px;
+        margin: 25px;
+        @include center("y");
         &:hover {
-          color: #000;
+          filter: invert(100);
+        }
+        img.icon {
+          width: 30%;
+          margin-right: 15px;
         }
       }
     }
