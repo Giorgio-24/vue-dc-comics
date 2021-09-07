@@ -76,6 +76,10 @@ li {
   padding: 5px 0;
   a {
     color: $lighter-grey;
+    &:hover {
+      color: #fff;
+      border-bottom: 2px solid $blue;
+    }
   }
 }
 </style>

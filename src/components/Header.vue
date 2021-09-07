@@ -1,7 +1,7 @@
 <template>
   <header class="container h-120">
     <div class="row">
-      <figure>
+      <figure class="clickable">
         <img src="@/assets/img/dc-logo.png" alt="dc-logo" class="img-fluid" />
       </figure>
       <ul>
@@ -102,6 +102,7 @@ ul {
     color: $dark-grey;
     &:hover {
       color: $blue;
+      border-bottom: 2px solid $blue;
     }
   }
 }

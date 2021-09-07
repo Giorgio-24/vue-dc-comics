@@ -9,27 +9,31 @@
           <li><a href="#" class="uppercase">Follow us</a></li>
           <li>
             <a href="#"
-              ><img src="../assets/img/footer-facebook.png" alt=""
+              ><img src="../assets/img/footer-facebook.png" alt="facebook-logo"
             /></a>
           </li>
           <li>
             <a href="#"
-              ><img src="../assets/img/footer-twitter.png" alt=""
+              ><img src="../assets/img/footer-twitter.png" alt="twitter-logo"
             /></a>
           </li>
           <li>
             <a href="#"
-              ><img src="../assets/img/footer-youtube.png" alt=""
+              ><img src="../assets/img/footer-youtube.png" alt="youtube-logo"
             /></a>
           </li>
           <li>
             <a href="#"
-              ><img src="../assets/img/footer-pinterest.png" alt=""
+              ><img
+                src="../assets/img/footer-pinterest.png"
+                alt="pinterest-logo"
             /></a>
           </li>
           <li>
             <a href="#"
-              ><img src="../assets/img/footer-periscope.png" alt=""
+              ><img
+                src="../assets/img/footer-periscope.png"
+                alt="periscope-logo"
             /></a>
           </li>
         </ul>
@@ -49,9 +53,6 @@ section {
   background-color: $dark-grey;
   width: 100%;
   height: 105px;
-  position: fixed;
-  top: calc(100% - 105px);
-  z-index: 1;
 
   div.container {
     @include justify("between");
@@ -70,11 +71,18 @@ section {
       @include center("y");
     }
     a {
-      padding: 0 10px;
+      padding: 25px 10px;
       height: 100%;
       &.uppercase {
         color: $blue;
         font-weight: bold;
+        &:hover {
+          transform: scale(1.1);
+          color: $blue;
+        }
+      }
+      &:hover {
+        filter: brightness(0) invert(1);
       }
     }
   }
