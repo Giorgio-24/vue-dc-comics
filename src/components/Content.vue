@@ -1,14 +1,17 @@
 <template>
   <section>
-    <div class="c-series uppercase"><h4>Current series</h4></div>
-    <div class="container h-100">
-      <div class="card" v-for="(card, index) in cards" :key="index">
-        <figure>
-          <img class="img-fluid" :src="card.thumb" :alt="card.series" />
-        </figure>
-        <div class="uppercase">{{ card.series }}</div>
+    <div class="jumbotron"></div>
+    <div class="container-fluid">
+      <div class="c-series uppercase"><h4>Current series</h4></div>
+      <div class="container h-100">
+        <div class="card" v-for="(card, index) in cards" :key="index">
+          <figure>
+            <img class="img-fluid" :src="card.thumb" :alt="card.series" />
+          </figure>
+          <div class="uppercase">{{ card.series }}</div>
+        </div>
+        <div class="load-button uppercase"><a href="#">Load more</a></div>
       </div>
-      <div class="load-button uppercase"><a href="#">Load more</a></div>
     </div>
   </section>
 </template>
@@ -24,7 +27,14 @@ export default {
 @import "@/assets/scss/_mixins.scss";
 @import "@/assets/scss/_vars.scss";
 section {
-  background-color: #1c1c1c;
+  div.jumbotron {
+    height: 400px;
+    background-image: url("../assets/img/jumbotron.jpg");
+    background-size: cover;
+  }
+  div.container-fluid {
+    background-color: #1c1c1c;
+  }
   .c-series {
     width: 250px;
     padding: 10px 0;
@@ -37,6 +47,7 @@ section {
     font-size: 25px;
   }
   div.container {
+    background-color: #1c1c1c;
     padding-bottom: 25px;
     @include center("x");
     flex-wrap: wrap;
