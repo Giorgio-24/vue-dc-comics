@@ -55,6 +55,10 @@ section {
       color: #fff;
       width: 160px;
       margin: 20px;
+      &:hover {
+        position: relative;
+        bottom: 10px;
+      }
       figure {
         height: 160px;
       }
@@ -66,6 +70,9 @@ section {
       background-color: $blue;
       align-self: center;
       padding: 10px 0;
+      &:hover {
+        transform: scale(1.1);
+      }
       a {
         color: #fff;
         font-weight: bold;
