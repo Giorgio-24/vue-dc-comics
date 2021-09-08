@@ -1,5 +1,6 @@
 <template>
   <section>
+    <div class="c-series uppercase"><h4>Current series</h4></div>
     <div class="container h-100">
       <div class="card" v-for="(card, index) in cards" :key="index">
         <figure>
@@ -7,6 +8,7 @@
         </figure>
         <div class="uppercase">{{ card.series }}</div>
       </div>
+      <div class="load-button uppercase"><a href="#">Load more</a></div>
     </div>
   </section>
 </template>
@@ -20,12 +22,23 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/_mixins.scss";
+@import "@/assets/scss/_vars.scss";
 section {
   background-color: #1c1c1c;
-
+  .c-series {
+    width: 250px;
+    padding: 10px 0;
+    position: relative;
+    bottom: 22px;
+    left: 230px;
+    background-color: $blue;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+  }
   div.container {
-    padding: 60px 0;
-    display: flex;
+    padding-bottom: 25px;
+    @include center("x");
     flex-wrap: wrap;
     .card {
       color: #fff;
@@ -36,6 +49,16 @@ section {
       }
       div {
         margin-top: 10px;
+      }
+    }
+    .load-button {
+      background-color: $blue;
+      padding: 10px 50px;
+      align-self: center;
+      a {
+        color: #fff;
+        font-weight: bold;
+        font-size: 12px;
       }
     }
   }
