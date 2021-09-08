@@ -6,7 +6,13 @@
       </figure>
       <ul>
         <li v-for="(link, index) in links" :key="index">
-          <a class="uppercase" :href="link.url">{{ link.text }}</a>
+          <a
+            class="uppercase"
+            :class="link.current === true ? 'selected' : ''"
+            @click="this.currentLink = index"
+            :href="link.url"
+            >{{ link.text }}</a
+          >
         </li>
       </ul>
     </div>
@@ -18,6 +24,7 @@ export default {
   name: "Data",
   data() {
     return {
+      currentLink: 3,
       links: [
         {
           text: "Characters",
@@ -70,6 +77,12 @@ export default {
           current: false,
         },
       ],
+      computed: {
+        selectedLink() {
+          /* if (index === this.currentLink) */
+          this.links[this.currentLink].current === true;
+        },
+      },
     };
   },
 };
@@ -100,6 +113,10 @@ ul {
     font-weight: bold;
     padding: 10px;
     color: $dark-grey;
+    &.selected {
+      color: $blue;
+      border-bottom: 2px solid $blue;
+    }
     &:hover {
       color: $blue;
       border-bottom: 2px solid $blue;
