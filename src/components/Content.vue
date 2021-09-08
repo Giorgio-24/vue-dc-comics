@@ -4,12 +4,8 @@
     <div class="container-fluid">
       <div class="c-series uppercase"><h4>Current series</h4></div>
       <div class="container h-100">
-        <div class="card clickable" v-for="(card, index) in cards" :key="index">
-          <figure>
-            <img class="img-fluid" :src="card.thumb" :alt="card.series" />
-          </figure>
-          <div class="uppercase">{{ card.series }}</div>
-        </div>
+        <Card v-for="(card, index) in cards" :key="index" :card="card" />
+
         <div class="load-button uppercase"><a href="#">Load more</a></div>
       </div>
     </div>
@@ -17,8 +13,12 @@
 </template>
 
 <script>
+import Card from "./ComicsCard.vue";
 export default {
   name: "Content",
+  components: {
+    Card,
+  },
   props: ["cards"],
 };
 </script>
@@ -51,34 +51,19 @@ section {
     padding-bottom: 25px;
     @include center("x");
     flex-wrap: wrap;
-    .card {
-      color: #fff;
-      width: 160px;
-      margin: 20px;
-      &:hover {
-        position: relative;
-        bottom: 10px;
-      }
-      figure {
-        height: 160px;
-      }
-      div {
-        margin-top: 10px;
-      }
+  }
+  .load-button {
+    background-color: $blue;
+    align-self: center;
+    padding: 10px 0;
+    &:hover {
+      transform: scale(1.1);
     }
-    .load-button {
-      background-color: $blue;
-      align-self: center;
-      padding: 10px 0;
-      &:hover {
-        transform: scale(1.1);
-      }
-      a {
-        color: #fff;
-        font-weight: bold;
-        font-size: 12px;
-        padding: 0 50px;
-      }
+    a {
+      color: #fff;
+      font-weight: bold;
+      font-size: 12px;
+      padding: 0 50px;
     }
   }
 }
