@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="c-series uppercase"><h4>Current series</h4></div>
       <div class="container h-100">
-        <div class="card" v-for="(card, index) in cards" :key="index">
+        <div class="card clickable" v-for="(card, index) in cards" :key="index">
           <figure>
             <img class="img-fluid" :src="card.thumb" :alt="card.series" />
           </figure>
@@ -64,12 +64,13 @@ section {
     }
     .load-button {
       background-color: $blue;
-      padding: 10px 50px;
       align-self: center;
+      padding: 10px 0;
       a {
         color: #fff;
         font-weight: bold;
         font-size: 12px;
+        padding: 0 50px;
       }
     }
   }
